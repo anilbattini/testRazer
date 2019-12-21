@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="earbud_padding">20dp</dimen>
+    <dimen name="earbud_padding_connecting">40dp</dimen>
+    <dimen name="button_height">30dp</dimen>
+    <dimen name="bottom_padding">50dp</dimen>
+    <dimen name="padding_connecting">150dp</dimen>
+    <item name="opacity" type="dimen" format="float">0.4</item>
 </resources>

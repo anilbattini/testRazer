@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Razer</string>
+    <string name="search">SEARCH</string>
+    <string name="cancel">CANCEL</string>
 </resources>

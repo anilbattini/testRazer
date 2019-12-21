@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:bind="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="rowViewModel"
+        type="com.example.razer.screens.dashboard.DashboardViewModel"/>
+</data>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.dashboard.DashboardFragment">
+    <include layout="@layout/ear_buds"
+        bind:rowViewModel="@{rowViewModel}"/>
+    <include layout="@layout/search"
+        bind:rowViewModel="@{rowViewModel}"/>
+</FrameLayout>
+</layout>

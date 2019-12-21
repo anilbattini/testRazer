@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="rowViewModel"
+            type="com.example.razer.injection.AppViewModel"/>
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/left_earbud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="@dimen/opacity"
+        android:paddingEnd="@dimen/earbud_padding"
+        android:paddingStart="0dp"
+        android:src="@mipmap/ic_earbudd_left"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/right_earbud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="@dimen/opacity"
+        android:paddingEnd="@dimen/earbud_padding"
+        android:paddingStart="0dp"
+        android:scaleX="-1"
+        android:src="@mipmap/ic_earbudd_left"
+        tools:ignore="ContentDescription" />
+</LinearLayout>
+</layout>

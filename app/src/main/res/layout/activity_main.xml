@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="rowViewModel"
+            type="com.example.razer.injection.AppViewModel"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/left_earbud"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_earbudd_left"
-        android:paddingEnd="@dimen/earbud_padding"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@id/right_earbud"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/right_earbud"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="-1"
-        android:src="@mipmap/ic_earbudd_left"
-        android:paddingEnd="@dimen/earbud_padding"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/left_earbud"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.connecting.ConnectingFragment">
+        <include layout="@layout/ear_buds"
+            bind:rowViewModel="@{rowViewModel}"/>
+        <include layout="@layout/search"
+            bind:rowViewModel="@{rowViewModel}"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
