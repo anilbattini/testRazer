@@ -5,11 +5,21 @@ import android.view.View
 import com.example.razer.injection.AppViewModel
 
 class ConnectingViewModel(private val context: Application) : AppViewModel() {
-    override fun getSearchBtnVisibility(): Int {
-        return View.GONE
+    lateinit var navigationListener: NavigationListener
+
+    override fun onSearchClick(view: View) {
+        isSearchEnabled = false
+        isCancelEnabled = true
+        navigationListener?.goNext()
     }
 
-    override fun getCancelBtnVisibility(): Int {
-        return View.VISIBLE
+    override fun onCancelClick(view: View) {
+        isCancelEnabled = false
+        isSearchEnabled = true
+    }
+
+    interface NavigationListener {
+        fun goNext()
     }
 }
+

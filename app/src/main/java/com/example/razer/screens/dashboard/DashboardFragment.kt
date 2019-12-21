@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.razer.databinding.DashboardFragmentBinding
-import kotlinx.android.synthetic.main.search.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : Fragment() {
@@ -23,7 +22,6 @@ class DashboardFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.rowViewModel = dashboardViewModel
-        cancel_button.visibility = View.VISIBLE
     }
 
 }

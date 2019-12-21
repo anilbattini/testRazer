@@ -1,6 +1,8 @@
 package com.example.razer.injection
 
+import android.view.View
+
 interface BaseViewModel {
-    fun getSearchBtnVisibility(): Int
-    fun getCancelBtnVisibility(): Int
+    fun onSearchClick(view: View) {}
+    fun onCancelClick(view: View) {}
 }

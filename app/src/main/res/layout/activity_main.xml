@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:bind="http://schemas.android.com/apk/res-auto">
-    <data>
-        <variable
-            name="rowViewModel"
-            type="com.example.razer.injection.AppViewModel"/>
-    </data>
-
-<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".screens.connecting.ConnectingFragment">
-        <include layout="@layout/ear_buds"
-            bind:rowViewModel="@{rowViewModel}"/>
-        <include layout="@layout/search"
-            bind:rowViewModel="@{rowViewModel}"/>
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+

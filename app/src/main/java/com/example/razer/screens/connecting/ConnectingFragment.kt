@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.razer.R
 import com.example.razer.databinding.ConnectingFragmentBinding
-import com.example.razer.extensions.onClick
 import com.example.razer.screens.dashboard.DashboardFragment
 import kotlinx.android.synthetic.main.search.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ConnectingFragment : Fragment() {
+class ConnectingFragment : Fragment(), ConnectingViewModel.NavigationListener {
 
     private lateinit var binding: ConnectingFragmentBinding
     private val connectingViewModel: ConnectingViewModel by viewModel()
@@ -28,15 +27,15 @@ class ConnectingFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.rowViewModel = connectingViewModel
-        search_button.visibility = View.VISIBLE
-        search_button.onClick {
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.main_layout, DashboardFragment())
-                ?.addToBackStack(this.javaClass.name)
-                ?.commit()
-        }
+        connectingViewModel.navigationListener = this
     }
 
+    override fun goNext() {
+        fragmentManager?.beginTransaction()
+            ?.replace(R.id.main_layout, DashboardFragment())
+            ?.addToBackStack(this.javaClass.name)
+            ?.commit()
+    }
 }
 
 

@@ -2,4 +2,6 @@
     <string name="app_name">Razer</string>
     <string name="search">SEARCH</string>
     <string name="cancel">CANCEL</string>
+    <string name="connecting">CONNECTING…</string>
+    <string name="searching">SEARCHING…</string>
 </resources>

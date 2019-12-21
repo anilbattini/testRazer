@@ -9,33 +9,32 @@
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:visibility="@{rowViewModel.getSearchBtnVisibility()}"
+        android:visibility="@{rowViewModel.isSearchEnabled ? View.VISIBLE : View.GONE}"
+        android:onClick="@{(view) -> rowViewModel.onSearchClick(view)}"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_marginBottom="@dimen/bottom_btn_padding"
         android:background="@drawable/grey_round_rect"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+        style="@style/ButtonTextStyle"
         android:text="@string/search" />
 
     <Button
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:visibility="@{rowViewModel.getCancelBtnVisibility()}"
+        android:visibility="@{rowViewModel.isCancelEnabled ? View.VISIBLE : View.GONE}"
+        android:onClick="@{(view) -> rowViewModel.onCancelClick(view)}"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_marginBottom="@dimen/bottom_btn_padding"
         android:background="@drawable/grey_round_rect"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
+        style="@style/ButtonTextStyle"
         android:text="@string/cancel" />
 
 </RelativeLayout>
