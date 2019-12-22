@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screens.connecting.ConnectingFragment">
-    <include layout="@layout/ear_buds_connecting"
+    <include layout="@layout/ear_buds"
         bind:rowViewModel="@{rowViewModel}"/>
     <include layout="@layout/search"
         bind:rowViewModel="@{rowViewModel}"/>

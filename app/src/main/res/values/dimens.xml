@@ -2,11 +2,16 @@
 <resources>
     <dimen name="earbud_padding">20dp</dimen>
     <dimen name="earbud_padding_connecting">40dp</dimen>
+    <dimen name="right_battery_indicator_padding">100dp</dimen>
+    <dimen name="battery_indicator_padding_top">100dp</dimen>
+    <dimen name="left_battery_indicator_padding">30dp</dimen>
     <dimen name="button_height">30dp</dimen>
     <dimen name="bottom_btn_padding">50dp</dimen>
     <dimen name="padding_connecting">150dp</dimen>
-    <dimen name="earbud_connecting_padding_bottom">150dp</dimen>
+    <dimen name="earbud_connecting_padding_bottom">300dp</dimen>
     <dimen name="progress_bar_text_size">15sp</dimen>
     <dimen name="progress_bar_width">200dp</dimen>
-    <item name="opacity" type="dimen" format="float">0.4</item>
+    <dimen name="drawable_padding">10dp</dimen>
+    <item name="opacity" type="dimen" format="float">0.2</item>
+    <item name="opacity_connecting" type="dimen" format="float">0.6</item>
 </resources>

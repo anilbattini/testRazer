@@ -5,5 +5,4 @@ import android.view.View
 import com.example.razer.injection.AppViewModel
 
 class DashboardViewModel(val context: Application) : AppViewModel() {
-
 }

@@ -9,24 +9,21 @@
             type="com.example.razer.injection.AppViewModel" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginBottom="@dimen/earbud_connecting_padding_bottom">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingBottom="@dimen/bottom_btn_padding">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/earbud_connecting_padding_bottom"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/left_earbud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="@dimen/opacity"
+                android:alpha="@dimen/opacity_connecting"
                 android:paddingStart="0dp"
                 android:paddingEnd="@dimen/earbud_padding_connecting"
                 android:src="@mipmap/ic_earbudd_left"
@@ -36,7 +33,7 @@
                 android:id="@+id/right_earbud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="@dimen/opacity"
+                android:alpha="@dimen/opacity_connecting"
                 android:paddingStart="0dp"
                 android:paddingEnd="@dimen/earbud_padding_connecting"
                 android:scaleX="-1"
@@ -44,16 +41,19 @@
                 tools:ignore="ContentDescription" />
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/battery_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ButtonTextStyle"
-            android:textSize="@dimen/progress_bar_text_size"
-            android:text="@string/connecting"/>
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:layout_width="@dimen/progress_bar_width"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            style="?android:attr/progressBarStyleHorizontal"/>
-    </LinearLayout>
+            android:layout_centerInParent="true"
+            android:paddingTop="@dimen/battery_indicator_padding_top"
+            android:visibility="gone">
+
+            <include layout="@layout/left_battery_indicator"/>
+            <View
+                android:layout_width="@dimen/right_battery_indicator_padding"
+                android:layout_height="match_parent"/>
+            <include layout="@layout/right_battery_indicator" />
+        </LinearLayout>
+    </RelativeLayout>
 </layout>

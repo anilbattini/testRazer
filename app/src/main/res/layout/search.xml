@@ -9,13 +9,14 @@
 
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
 
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:visibility="@{rowViewModel.isSearchEnabled ? View.VISIBLE : View.GONE}"
+        android:visibility="@{rowViewModel.isSearchEnabled}"
         android:onClick="@{(view) -> rowViewModel.onSearchClick(view)}"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
@@ -28,7 +29,7 @@
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:visibility="@{rowViewModel.isCancelEnabled ? View.VISIBLE : View.GONE}"
+        android:visibility="@{rowViewModel.isCancelEnabled}"
         android:onClick="@{(view) -> rowViewModel.onCancelClick(view)}"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"

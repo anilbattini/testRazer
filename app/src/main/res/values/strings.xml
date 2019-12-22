@@ -4,4 +4,8 @@
     <string name="cancel">CANCEL</string>
     <string name="connecting">CONNECTING…</string>
     <string name="searching">SEARCHING…</string>
+    <string name="batter_sixty">60%</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

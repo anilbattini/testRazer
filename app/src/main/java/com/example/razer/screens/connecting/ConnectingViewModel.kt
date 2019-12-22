@@ -8,18 +8,24 @@ class ConnectingViewModel(private val context: Application) : AppViewModel() {
     lateinit var navigationListener: NavigationListener
 
     override fun onSearchClick(view: View) {
-        isSearchEnabled = false
-        isCancelEnabled = true
-        navigationListener?.goNext()
+        updateSearchBtn()
+        navigationListener?.triggerSearch()
     }
 
     override fun onCancelClick(view: View) {
-        isCancelEnabled = false
-        isSearchEnabled = true
+//        updateCancelBtn()
+//        navigationListener.cancelSearch()
+    }
+
+    fun updateButtons() {
+        updateSearchBtn()
+        updateCancelBtn()
     }
 
     interface NavigationListener {
-        fun goNext()
+        fun triggerSearch()
+        fun cancelSearch()
     }
+
 }
 
