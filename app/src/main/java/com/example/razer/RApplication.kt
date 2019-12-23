@@ -13,5 +13,4 @@ class RApplication : Application() {
             modules(listOf(viewModelModule))
         }
     }
-
 }

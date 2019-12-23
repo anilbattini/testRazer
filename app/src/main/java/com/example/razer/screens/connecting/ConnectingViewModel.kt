@@ -13,8 +13,11 @@ class ConnectingViewModel(private val context: Application) : AppViewModel() {
     }
 
     override fun onCancelClick(view: View) {
-//        updateCancelBtn()
-//        navigationListener.cancelSearch()
+        /**
+         * TODO: No functionality given yet. Kept some logic as placeholder.
+         */
+       /* updateCancelBtn()
+        navigationListener.cancelSearch()*/
     }
 
     fun updateButtons() {
