@@ -13,6 +13,7 @@ import com.example.razer.BaseFragment
 import com.example.razer.R
 import com.example.razer.databinding.ConnectingFragmentBinding
 import com.example.razer.screens.dashboard.DashboardFragment
+import kotlinx.android.synthetic.main.action_bar.*
 import kotlinx.android.synthetic.main.ear_buds.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -62,8 +63,10 @@ class ConnectingFragment : BaseFragment(), ConnectingViewModel.NavigationListene
                 connectingViewModel.updateCancelBtn()
                 progress_bar.visibility = View.VISIBLE
                 animationHandler.postDelayed({
+                    mActivity?.updateIcon()
                     progress_bar_tv.text = getString(R.string.searching)
                     animationHandler.postDelayed({
+                        mActivity?.updateIcon()
                         connectingViewModel.updateButtons()
                         goNext()
                     }, 2000)
