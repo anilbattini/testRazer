@@ -42,7 +42,7 @@ class DashboardFragment : BaseFragment() {
         propertyAnimator.setListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator) {}
             override fun onAnimationEnd(animation: Animator) {
-                battery_indicator.visibility = View.VISIBLE
+                button_layout.visibility = View.VISIBLE
                 left_earbud.alpha = 1f
                 right_earbud.alpha = 1f
             }

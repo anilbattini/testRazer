@@ -64,6 +64,7 @@ class ConnectingFragment : BaseFragment(), ConnectingViewModel.NavigationListene
                 animationHandler.postDelayed({
                     progress_bar_tv.text = getString(R.string.searching)
                     animationHandler.postDelayed({
+                        connectingViewModel.updateButtons()
                         goNext()
                     }, 2000)
                 }, 2 * ANIM_DURATION)
@@ -74,7 +75,6 @@ class ConnectingFragment : BaseFragment(), ConnectingViewModel.NavigationListene
     }
 
     private fun goNext() {
-        connectingViewModel.updateButtons()
         fragmentManager?.beginTransaction()
             ?.replace(R.id.main_layout, DashboardFragment())
             ?.addToBackStack(this.javaClass.name)

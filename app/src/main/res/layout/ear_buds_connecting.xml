@@ -10,13 +10,15 @@
     </data>
 
     <RelativeLayout
+        android:id="@+id/earbuds_slot"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="@dimen/earbud_connecting_padding_bottom"
+            android:layout_marginBottom="@dimen/earbud_connecting_padding_bottom"
             android:gravity="center">
 
             <ImageView
@@ -41,19 +43,120 @@
                 tools:ignore="ContentDescription" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/battery_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:paddingTop="@dimen/battery_indicator_padding_top"
-            android:visibility="gone">
+        <RelativeLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
 
-            <include layout="@layout/left_battery_indicator"/>
-            <View
-                android:layout_width="@dimen/right_battery_indicator_padding"
-                android:layout_height="match_parent"/>
-            <include layout="@layout/right_battery_indicator" />
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/battery_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingTop="@dimen/battery_indicator_padding_top">
+
+                <include layout="@layout/left_battery_indicator" />
+
+                <View
+                    android:layout_width="@dimen/right_battery_indicator_padding"
+                    android:layout_height="match_parent" />
+
+                <include layout="@layout/right_battery_indicator" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/remapping"
+                style="@style/ButtonTextStyle"
+                android:layout_width="@dimen/remapping_btn_width"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/battery_indicator"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/remapping_btn_bottom_padding"
+                android:background="@drawable/green_round_rect"
+                android:text="@string/remapping"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/tutorial"
+                style="@style/ButtonTextStyle"
+                android:layout_width="@dimen/tutorial_btn_width"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/remapping"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/tutorial_btn_bottom_padding"
+                android:background="@drawable/grey_round_rect"
+                android:text="@string/tutorial" />
+
+            <LinearLayout
+                android:id="@+id/bottom_bar"
+                android:layout_width="match_parent"
+                android:elevation="@dimen/padding_10dp"
+                android:layout_height="@dimen/bottom_navigation_bar"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorSecondary"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <TextView
+                    style="@style/ButtonTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="@string/eq_preset" />
+
+                <TextView
+                    style="@style/ButtonTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="@string/eq_preset" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bottom_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorPrimaryDark"
+                android:alpha="1"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/ButtonTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/bottom_navigation_bar"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="@string/default_boost" />
+
+                <TextView
+                    style="@style/ButtonTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/bottom_navigation_bar"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="@string/bass_boost" />
+                <TextView
+                    style="@style/ButtonTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/bottom_navigation_bar"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="@string/treble_boost" />
+
+            </LinearLayout>
+        </RelativeLayout>
     </RelativeLayout>
 </layout>

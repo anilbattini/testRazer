@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#191919</color>
-    <color name="btn_grey">#80808080</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorSecondary">#323232</color>
+    <color name="btn_grey">#808080</color>
+    <color name="colorPrimaryDark">#FF000000</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="grey_text_color">@android:color/darker_gray</color>
+    <color name="grey_text_color">#D3D3D3</color>
 </resources>
