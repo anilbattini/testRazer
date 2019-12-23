@@ -144,6 +144,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="@dimen/padding_10dp"
+                android:textColor="@color/colorAccent"
                 android:onClick="@{(view)-> rowViewModel.onBottomSheetClick(view)}"
                 android:text="@string/default_boost" />
 
